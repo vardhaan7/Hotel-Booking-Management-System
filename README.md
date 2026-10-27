@@ -1,107 +1,105 @@
+# The Wild Oasis – Hotel Booking Management System
 
+## Project Description
 
-# The Wild Oasis – Booking Dashboard
+The Wild Oasis is a full-stack hotel booking management dashboard built using React, Vite, Styled Components, and Supabase. It helps accommodation providers manage cabins, bookings, guest records, users, and hotel settings through a centralized dashboard.
 
-A **full-stack booking management dashboard** built with **React (Vite) + Styled Components** for the frontend and **Supabase (PostgreSQL + Auth + Storage)** for the backend.
+### Key Features
+- Dashboard with booking statistics, occupancy, and revenue overview.
+- Manage cabins, including pricing, discounts, capacity, and images.
+- View and manage bookings with status filters.
+- Manage guest information and user roles.
+- Configure booking policies and breakfast pricing.
+- Supabase authentication and PostgreSQL database integration.
+- Responsive user interface.
 
-This project allows hotel staff and admins to manage cabins, bookings, guests, and user roles in one place, with real-time analytics and secure authentication.
+## Project Requirements
+
+Ensure the following are installed before running the project:
+
+- **Node.js:** Version 16 or higher
+- **npm:** Node package manager
+- **Git:** For cloning the repository
+- **Supabase Account:** For database, authentication, and storage
+- **VS Code:** Recommended code editor
+- **Web Browser:** Chrome, Edge, or Firefox
+
+## Technology Stack
+
+- **Frontend:** React.js, Vite
+- **Styling:** Styled Components
+- **Backend:** Supabase
+- **Database:** PostgreSQL
+- **Authentication:** Supabase Auth
+- **Storage:** Supabase Storage
+
+## Database Setup
+
+1. Create a project at [Supabase](https://supabase.com/).
+2. Open the SQL Editor in your Supabase dashboard.
+3. Create the following tables using the SQL schema provided in the project documentation:
+   - `cabins`
+   - `guests`
+   - `bookings`
+   - `users`
+   - `settings`
+4. Enable email/password authentication in Supabase.
+5. Create a Storage bucket named `cabin-images` for cabin images.
+6. Configure appropriate database access policies and permissions.
+7. Open **Project Settings → API** and copy your project URL and publishable/anon key.
+
+**Note:** Review the database schema and Row Level Security (RLS) policies before running the SQL, especially if using real guest data.
+
+## How to Run the Project Locally
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/aleksandromilenkov/TheWildOasis.git
+cd TheWildOasis
+```
+
+### 2. Install Dependencies
+
+```bash
+npm install
+```
+
+### 3. Configure Environment Variables
+
+Create a `.env` file in the project root and add your Supabase credentials:
+
+```env
+VITE_SUPABASE_URL=https://YOUR-PROJECT-REF.supabase.co
+VITE_SUPABASE_ANON_KEY=YOUR_SUPABASE_ANON_KEY
+```
+
+Replace the placeholders with your actual Supabase project values. Never expose your Supabase `service_role` key in frontend code.
+
+### 4. Start the Development Server
+
+```bash
+npm run dev
+```
+
+Open the local URL displayed in your terminal, usually:
+
+```text
+http://localhost:5173
+```
+
+## Future Enhancements
+
+- Automated booking notifications via email and SMS.
+- Enhanced guest profiles and management.
+- Role-based access control for administrators and staff.
+- Integration with external booking platforms.
+- Advanced analytics and mobile optimization.
+
+## Conclusion
+
+The Wild Oasis provides a modern and customizable solution for managing hotel and cabin operations. By combining React, Vite, and Supabase, the project aims to simplify reservation management and improve operational efficiency.
 
 ---
 
-## 🚀 Project Description
-
-The **Wild Oasis** dashboard is designed to simplify hotel and resort operations. It provides:
-
-* A **Dashboard** with KPIs (bookings, occupancy, revenue).
-* **CRUD for Cabins** – add, edit, delete rooms with images and discounts.
-* **CRUD for Bookings** – manage reservations, check-in/out guests, handle cancellations.
-* **Guest Management** – keep guest records with nationality and ID details.
-* **User Management** – Supabase Auth for login + role-based access control.
-* **Hotel Settings** – control rules (min/max nights, guests, breakfast pricing).
-
-This project showcases integration of **Supabase backend + React frontend** with a clean UI, authentication, and database policies.
-
----
-
-## ⚙️ Project Requirements
-
-* **Node.js** ≥ 18
-* **npm** or **yarn** (package manager)
-* **Supabase account** ([https://supabase.com](https://supabase.com))
-* Browser (Chrome/Edge/Firefox recommended)
-
----
-
-## 🗄️ Database Setup (Supabase)
-
-1. **Create a new project** in [Supabase Dashboard](https://supabase.com/dashboard).
-
-2. Go to **SQL Editor** and paste the provided SQL script to create tables:
-
-   * `cabins`
-   * `guests`
-   * `bookings`
-   * `users` (linked with `auth.users`)
-   * `settings`
-   * Storage bucket: `cabin-images`
-
-3. Copy your **Project URL** and **anon/public API key** from:
-
-   ```
-   Project Settings → API → Project URL & anon key
-   ```
-
-4. Create a `.env` file inside the frontend folder and add:
-
-   ```env
-   VITE_SUPABASE_URL=your-project-url
-   VITE_SUPABASE_ANON_KEY=your-anon-key
-   ```
-
----
-
-## 💻 Running the Project Locally
-
-1. **Clone this repository**
-
-   ```bash
-   git clone https://github.com/your-username/the-wild-oasis.git
-   cd the-wild-oasis
-   ```
-
-2. **Install dependencies**
-
-   ```bash
-   npm install
-   ```
-
-3. **Configure environment variables**
-
-   * Create `.env` file with Supabase keys as shown above.
-
-4. **Start the development server**
-
-   ```bash
-   npm run dev
-   ```
-
-5. Open the app in your browser:
-
-   ```
-   http://localhost:5173
-   ```
-
----
-
-## ✅ Features Implemented
-
-* 📊 Dashboard with revenue & occupancy analytics
-* 🛏️ Cabin management with images and discounts
-* 📅 Booking management with check-in/out flow
-* 👥 Guest records with IDs and nationality
-* 🔐 Supabase authentication & role-based users
-* ⚙️ Hotel settings management
-
-
-
-
+**Note:** The repository URL above is the one referenced in the project documentation. Replace it with your own repository URL if you are using a fork.
